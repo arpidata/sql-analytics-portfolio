@@ -14,7 +14,8 @@ services:
       test: ["CMD-SHELL", "pg_isready -U ${DB_USER} -d ${DB_NAME}"]
       interval: 10s
       timeout: 5s
-      retries: 10
+      retries: 20 #! Increase retries to allow for longer startup times
+      volumes:
     volumes:
       # Persist database data (keep your bind mount; a named volume also works)
       - ./postgres_data:/var/lib/postgresql/data
@@ -22,6 +23,7 @@ services:
       - ./init:/docker-entrypoint-initdb.d
       # Make CSVs available to COPY during init (read-only)
       - ./data:/docker-entrypoint-initdb.d/data:ro
+      - ./data/analytics_schema:/data:ro
 
   pgadmin:
     container_name: pgadmin_aca
@@ -35,5 +37,8 @@ services:
       - "5050:80"
     volumes:
       - ./pgadmin_data:/var/lib/pgadmin
+      - ./queries:/var/lib/pgadmin/storage/admin_admin.com/queries
     depends_on:
-      - db
+      - db 
+    
+    
