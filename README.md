@@ -1,5 +1,5 @@
 # sql-analytics-portfolio
-# SQL—06 – Text Profiling & KPI Standardization
+# SQL_06 – Text Profiling & KPI Standardization
 
 **Dataset:** `transactions_text_demo` – 1,000 dummy transactions with messy text: inconsistent phones, annotated categories, mixed casing, duplicates.
 
