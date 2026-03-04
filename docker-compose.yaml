@@ -1,7 +1,7 @@
 services:
   db:
     container_name: postgresql_db_aca
-    image: postgres:17
+    image: postgis/postgis:17-3.4
     restart: always
     env_file: .env
     environment:
@@ -15,7 +15,6 @@ services:
       interval: 10s
       timeout: 5s
       retries: 20 #! Increase retries to allow for longer startup times
-      volumes:
     volumes:
       # Persist database data (keep your bind mount; a named volume also works)
       - ./postgres_data:/var/lib/postgresql/data
@@ -23,7 +22,7 @@ services:
       - ./init:/docker-entrypoint-initdb.d
       # Make CSVs available to COPY during init (read-only)
       - ./data:/docker-entrypoint-initdb.d/data:ro
-      - ./data/analytics_schema:/data:ro
+      - ./data/analytics_schema:/data:ro 
 
   pgadmin:
     container_name: pgadmin_aca
@@ -40,5 +39,4 @@ services:
       - ./queries:/var/lib/pgadmin/storage/admin_admin.com/queries
     depends_on:
       - db 
-    
     

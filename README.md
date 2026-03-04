@@ -1,5 +1,7 @@
 # sql-analytics-portfolio
-# Text Profiling & KPI Standardization
+
+ Text Profiling & KPI Standardization
+
 **Source Code:**[string_functions.sql](./queries/string_functions.sql)
 
 **Dataset:** `transactions_text_demo` – 1,000 dummy transactions with messy text: inconsistent phones, annotated categories, mixed casing, duplicates.
@@ -25,8 +27,8 @@
 
 ## 3️⃣ KPI Comparison
 
-| Metric | Raw | Cleaned |
-|--------|-----|---------|
+| Metric  | Raw   | Cleaned  |
+| ------- | ----- | -------- |
 | Revenue by category | Fragmented | Consolidated |
 | Unique customers | Inflated | Reduced |
 | Avg transaction value | Stable | Stable |
@@ -41,3 +43,99 @@
 - **Production risks:** Variable phone lengths, new annotations, unhandled formatting, country code differences  
 
 ---
+# Analytics Database Schema (SQL JOIN Practice)
+
+## 📖 Project Overview
+
+This project contains a fully structured PostgreSQL schema created for practicing SQL JOIN operations and relational database design.
+
+The database models a simplified analytical e-commerce system with geographical hierarchy and geospatial support using PostGIS.
+
+The schema name is:
+
+`analytics`
+
+---
+
+## 🗂 Database Structure
+
+The schema includes the following logical groups of tables:
+
+### 🌍 Geography Hierarchy
+- countries
+- regions
+- cities
+
+### 👥 Customers
+- customers
+
+### 🛒 Commerce
+- products
+- orders
+- order_items
+
+### 🗺 Geospatial Data (PostGIS)
+- country_boundaries
+- region_boundaries
+- city_boundaries
+- customer_locations
+
+---
+
+## 🔗 Relationships
+
+The database follows a hierarchical and relational structure:
+
+- One country → Many regions
+- One region → Many cities
+- One city → Many customers
+- One customer → Many orders
+- One order → Many order_items
+- One product → Can appear in many order_items
+
+Foreign key constraints are used to maintain referential integrity.
+
+---
+
+## 🧠 Key Features
+
+- Custom schema creation (`CREATE SCHEMA IF NOT EXISTS analytics`)
+- Use of `FOREIGN KEY` relationships
+- Data validation with `CHECK` constraints
+- Unique constraints (e.g. email)
+- PostGIS extension enabled for geospatial support
+- Geometry types:
+  - MultiPolygon (countries)
+  - Polygon (regions, cities)
+  - Point (customer locations)
+
+---
+
+## ⚙️ Technologies Used
+
+- PostgreSQL
+- PostGIS Extension
+- SQL (DDL)
+
+---
+
+## ▶️ How to Run
+
+1. Open pgAdmin or connect via psql
+2. Create a new database
+3. Run the SQL script file
+4. The `analytics` schema and all tables will be created automatically
+
+---
+
+## 🚀 Next Steps
+
+In the next phase, analytical SQL queries will be implemented using:
+
+- JOIN
+- GROUP BY
+- Aggregations
+- Filtering
+- Time-based analysis
+
+This project is part of SQL analytical training (Session 08 – JOINs).
