@@ -27,11 +27,11 @@
 
 ## 3️⃣ KPI Comparison
 
-| Metric  | Raw   | Cleaned  |
-| ------- | ----- | -------- |
-| Revenue by category | Fragmented | Consolidated |
-| Unique customers | Inflated | Reduced |
-| Avg transaction value | Stable | Stable |
+| Metric                | Raw        | Cleaned      |
+| --------------------- | ---------- | ------------ |
+| Revenue by category   | Fragmented | Consolidated |
+| Unique customers      | Inflated   | Reduced      |
+| Avg transaction value | Stable     | Stable       |
 
 ---
 
@@ -43,9 +43,10 @@
 - **Production risks:** Variable phone lengths, new annotations, unhandled formatting, country code differences  
 
 ---
-# Analytics Database Schema (SQL JOIN Practice)
 
-## 📖 Project Overview
+## Analytics Database Schema (SQL JOIN Practice)
+
+### 📖 Project Overview
 
 This project contains a fully structured PostgreSQL schema created for practicing SQL JOIN operations and relational database design.
 
@@ -62,19 +63,23 @@ The schema name is:
 The schema includes the following logical groups of tables:
 
 ### 🌍 Geography Hierarchy
+
 - countries
 - regions
 - cities
 
 ### 👥 Customers
+
 - customers
 
 ### 🛒 Commerce
+
 - products
 - orders
 - order_items
 
 ### 🗺 Geospatial Data (PostGIS)
+
 - country_boundaries
 - region_boundaries
 - city_boundaries
