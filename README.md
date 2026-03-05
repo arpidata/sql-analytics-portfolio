@@ -45,7 +45,9 @@
 ---
 
 ## Analytics Database Schema (SQL JOIN Practice)
+
 source Code: [analytics_schema.sql](queries/analytics_schema.sql)
+
 ### 📖 Project Overview
 
 This project contains a fully structured PostgreSQL schema created for practicing SQL JOIN operations and relational database design.
@@ -144,3 +146,62 @@ In the next phase, analytical SQL queries will be implemented using:
 - Time-based analysis
 
 This project is part of SQL analytical training (Session 08 – JOINs).
+
+## 🌍 Geospatial Data Engineering: PostGIS ETL Pipeline
+
+Source Code:[geospatial_data_etl.sql](sql/geospatial_data_etl.sql)
+
+## 📖 Project Overview_2
+
+This project demonstrates a professional-grade **Geospatial ETL pipeline** designed to handle complex spatial datasets. The workflow focuses on migrating raw administrative boundaries and customer location data into a structured **PostgreSQL/PostGIS** database, ensuring high data integrity and spatial accuracy.
+
+The pipeline transforms raw text-based coordinates (WKT) into validated geometry objects, creating a foundation for advanced location intelligence and business analytics.
+
+## 🛠 Tech Stack
+
+- **Database:** PostgreSQL (with PostGIS extension)
+
+- **Logic:** Advanced SQL (DDL/DML)
+- **Spatial Standard:** WGS 84 (SRID 4326)
+- **Tools:** VS Code, Git, GitHub
+
+## 🔄 The ETL Workflow
+
+The project follows a structured data engineering lifecycle to ensure scalability and reliability:
+
+### 1. Data Ingestion & Staging
+
+- Implementation of a **Staging Area pattern** using `_stg_` tables.
+
+- Decoupling raw data imports from production tables to prevent data corruption.
+- Bulk loading of datasets including Countries, Regions, Cities, and Customer Locations.
+
+### 2. Spatial Transformation
+
+- **WKT Parsing:** Converting Well-Known Text (WKT) strings into native PostGIS geometry types.
+
+- **Point & Polygon Management:** Handling diverse spatial types, from specific customer coordinates to complex multi-polygon administrative boundaries.
+- **Coordinate Standardization:** Enforcing **SRID 4326** across all layers for global map compatibility.
+
+### 3. Data Quality & Validation
+
+- **Topology Validation:** Automated checks using `ST_IsValid` to identify and filter malformed geometries.
+
+- **Spatial Integrity Audits:** Verification of SRID consistency and geometry type classification to ensure the database is "analysis-ready."
+
+## 📂 Project Structure
+
+- `geospatial_data_etl.sql`: The main SQL script containing the database schema, ETL logic, and validation procedures.
+
+- `README.md`: Documentation of the technical architecture and project goals.
+- `/data/`: (Placeholder) Directory for source CSV datasets.
+
+## 🚀 Key Learning Outcomes
+
+- **Database Architecture:** Designing a schema that supports both relational business data and spatial geometries.
+
+- **ETL Optimization:** Using staging-to-production logic for cleaner data pipelines.
+- **Spatial Analysis Readiness:** Preparing data for complex queries like "customers within a specific delivery zone" or "regional sales density."
+
+---
+*This project is part of my Data Engineering portfolio, focusing on SQL and Geospatial analytics.*
