@@ -45,7 +45,7 @@
 ---
 
 ## Analytics Database Schema (SQL JOIN Practice)
-
+source Code: [analytics_schema.sql](queries/analytics_schema.sql)
 ### 📖 Project Overview
 
 This project contains a fully structured PostgreSQL schema created for practicing SQL JOIN operations and relational database design.
