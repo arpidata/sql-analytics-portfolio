@@ -149,7 +149,7 @@ This project is part of SQL analytical training (Session 08 – JOINs).
 
 ## 🌍 Geospatial Data Engineering: PostGIS ETL Pipeline
 
-Source Code:[geospatial_data_etl.sql](sql/geospatial_data_etl.sql)
+Source Code: [geospatial_data_etl.sql](queries/geospatial_data_etl.sql)
 
 ## 📖 Project Overview_2
 
