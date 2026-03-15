@@ -205,3 +205,34 @@ The project follows a structured data engineering lifecycle to ensure scalabilit
 
 ---
 *This project is part of my Data Engineering portfolio, focusing on SQL and Geospatial analytics.*
+
+## SQL JOIN Analytics Queries
+
+This section contains example SQL queries demonstrating relational joins and basic analytical operations on the `analytics` schema.
+
+### Source Code
+
+[joins_analytics_queries.sql](queries/joins_analytics_queries.sql)
+
+### Queries Included
+
+- **Customer Orders (INNER JOIN)**  
+  Retrieves customers and their orders.
+
+- **Customers Without Orders (LEFT JOIN)**  
+  Finds customers who have not placed any orders.
+
+- **Orders and Products**  
+  Joins orders, order items, and products.
+
+- **Order Revenue Calculation**  
+  Calculates total revenue per order.
+
+- **Customer Geography Hierarchy**  
+  Joins customers with city, region, and country tables.
+
+- **Geospatial Join Example**  
+  Checks whether a customer's location is inside the city boundary using PostGIS.
+
+- **Join Row Count**  
+  Counts joined rows between orders and order_items.
