@@ -210,9 +210,7 @@ The project follows a structured data engineering lifecycle to ensure scalabilit
 
 This section contains example SQL queries demonstrating relational joins and basic analytical operations on the `analytics` schema.
 
-### Source Code
-
-[joins_analytics_queries.sql](queries/joins_analytics_queries.sql)
+### Source Code[joins_analytics_queries.sql](queries/joins_analytics_queries.sql)
 
 ### Queries Included
 
